@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title> Shride </title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="design.css">
+  <script language="JavaScript">
+    var i = 0;
+    var path = new Array();
+
+    // LIST OF IMAGES
+    path[0] = "img/oldprofile.jpg";
+    path[1] = "img/oldcreatedrive.jpg";
+    path[2] = "img/oldjoinride.jpg";
+
+    function swapImage() {
+      document.slide.src = path[i];
+      if (i < path.length - 1) i++;
+      else i = 0;
+      setTimeout("swapImage()", 3000);
+    }
+    window.onload = swapImage;
+  </script>
+  <header> Prototyping </header>
+
+</head>
+
+<body>
+  <div class="nav">
+    <ul>
+      <li><a href="P1.html">P1 </a></li>
+
+
+      <li><a href="P2.html">P2 </a></li>
+      <li><a href="P4.html">P4 </a></li>
+      <li><a href="index.html">Home </a></li>
+    </ul>
+  </div>
+  <div id="content">
+
+
+    <div id="chunk">
+      <h1>Prototype photos</h1>
+      <h2>Create profile: </h2>
+      <img src="img/createprofile.png">
+      <h2>Join a ride [as a rider]</h2>
+      <img src="img/riderpath.png">
+      <h2>Create a ride [as a driver]</h2>
+      <img src="img/driverpath.png">
+    </div>
+    <div id="chunk">
+      <h1>Prepare a briefing for test users. This should be at most a page of information about the purpose of your application and any background information about the domain that may be needed by your test users to understand it. Make your briefing short,
+        clear and concise, it should not describe how to use the interface.</h1>
+      <br> Shride is a rideshare application that focuses on the internal community as a resource for transportation. Travelling by car can be difficult to finagle at Wellesley-- you can find rides on facebook, email, and spreadsheets, but it is altogether
+      too chaotic to navigate. The goal in mind with Shride is to centralize the &ldquo;need ride&rdquo; messages sent out on public forums into one location and simplify the process of finding student drivers (who will likely charge less than a taxi
+      service or nationwide rideshare application user). &nbsp;We also hope to provide a safer and more comfortable experience to users as all interactions are between Wellesley students. &nbsp;Inspired by Uber and Carma Carpool, we hope to change the
+      way student transportation is run, both to reduce our carbon footprint and create a more tight knit community.
+    </div>
+    <div id="chunk">
+      <h1> Write your 3 scenario tasks on separate index cards. Just write the concrete goals of the task (e.g. &quot;use this mobile app to buy milk, tomatoes, and bread&quot;). Don&#39;t write the specific steps to follow, since that&#39;s for your users
+        to figure out. </h1>
+      <ul>
+        <li> Create a profile</li>
+        <li>Join a ride (as a rider)</li>
+        <li>Make a ride (as a driver)</li>
+      </ul>
+      </br>
+      We chose these tasks in particular because they highlight the main functionality of the application: creating rides, editing your profile, and joining rides. In order to display the full functionality, we ran it from all perspectives. The create profile
+      task has several paths-- we highlight them in the video for clarification.
+    </div>
+    <div id="chunk">
+      <h1>Filmed task: Create a profile</h1>
+      <video width=100% controls>
+        <source src="shride.m4v" type="video/mp4">
+
+          Your browser does not support the video tag.
+      </video>
+    </div>
+    <div id="chunk">
+      <h1>Observations: Usability problems you discovered from the testing. Describe what users did, but don&#39;t record users&#39; names. Your observations should include both your pilot users, and at least 3 users from outside the class.</h1>
+      <h2>Our users in class:</h2>
+      <br> Our users in class noticed a lot of transition details and inquired about mostly third party app integration.
+      <ul>
+        <li>We didn&rsquo;t have a sign in button.</li>
+        <li>We had redundant fields in the &ldquo;Create Profile&rdquo; task</li>
+        <li>Redundancy in terms of contact information attained from the Wellesley Login and filled in during the &ldquo;Create Profile&rdquo; task</li>
+        <li>Accessing photos permissions alert</li>
+        <li>Contact button should be a share button for the &ldquo;Make a drive&rdquo;</li>
+        <li>Breadcrumbs are unnecessary and clutter screen</li>
+        <li>Easy reversal of action needed to be streamlined for &ldquo;Join a ride&rdquo; and &ldquo;Create a Profile&rdquo;</li>
+        <li>More specific information about the driver for riders to see when they join rides</li>
+      </ul>
+      <h2>Our users outside of class:</h2>
+      <ul>
+        <li>Keeping our menu bar constant across all tasks (whether to log out or to cancel or to have a menu bar at all)</li>
+        <li>Add rate and cost information for riders when they join rides</li>
+        <li>Adding field for text input of address so that you don&rsquo;t need to find it on the map</li>
+    </div>
+    <div id="chunk">
+      <h1>Prototype iteration: Describe how your prototype changed between your pilot users and the real users.</h1>
+      <h2>Slideshow</h2>
+      <img name="slide" src="img/oldprofile.jpg" />
+      <h2>How it changed</h2>
+      <br>Breaking it up: We changed the &ldquo;Create Profile&rdquo; task to be a longer process with shorter fields for each step so that the user wouldn&rsquo;t have to be overwhelmed with fields.
+      <br>Simplifying the action: we wanted users to feel like they were in control (adding &ldquo;Back&rdquo; and &ldquo;Next&rdquo; buttons to control action within the app).
+      <br>Creating more paths: Added car information component to the driver profile, which only shows up if you are driver.
+    </div>
+    <div id="chunk">
+      <h1>Resolutions: What did you learn about the parts of your interface from this prototype? Propose design solutions for the usability problems you found.</h1>
+      <br>Users found it easier to be guided through forms rather than having a form on one page.
+      <br>Users within class enjoyed more visual map based location identification while users outside of class wanted to have text fields to be more specific
+      <br>Users in class were surprised that tasks could be accomplished quickly-- breaking up information into bite-sized pieces helps with making actions seem like they go by more quickly
+      <br>Our design solution is to make sure that we are keeping elements very basic from page to page. Making sure we stay consistent with our menus and stay consistent with the amount of whitespace from page to page is crucial to making the app usable.
+      <br>
+    </div>
+  </div>
+
+  <footer>CS220: Human-Computer Interaction &copy;2015</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,566 @@
+<!-- home.html has the home login screen and the settings page. -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>SHRIDE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/Shride.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <link href="glDatePicker.default.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+</head>
+
+<body>
+  <!-- home page for the app -->
+  <div data-role="page" id="home" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <h1>SHRIDE</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+
+      <a href="drive.html" data-role="button" data-mini="true">Give a Ride</a>
+      </br>
+      <a href="ride.html" data-role="button" data-mini="true">Looking for Ride</a>
+
+      </br>
+      <a href="manage.html" data-role="button" data-mini="true">Manage Rides</a>
+    </div>
+    </br>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#settings" data-icon="gear">Settings</a>
+              <li> <a href="login.php" data-icon="star">Logout</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Settings 1 -->
+
+  <div data-role="page" id="settings" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <h1>SHRIDE</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+
+      <label for="flip-1">
+        <strong>Test notifications</strong>
+      </label>
+      <select name="flip-1" id="flip-1" data-role="slider">
+        <option value="off">Off</option>
+        <option value="on">On</option>
+      </select>
+      </br>
+      <label for="flip-1">
+        <strong>Privacy</strong>
+      </label>
+      <select name="flip-1" id="flip-1" data-role="slider">
+        <option value="off">Off</option>
+        <option value="on">On</option>
+      </select>
+      </br>
+      <label for="flip-1">
+        <strong>Email Public</strong>
+      </label>
+      <select name="flip-1" id="flip-1" data-role="slider">
+        <option value="off">Off</option>
+        <option value="on">On</option>
+      </select>
+      </br>
+      <label for="flip-1">
+        <strong>Phone Number Public</strong>
+      </label>
+      <select name="flip-1" id="flip-1" data-role="slider">
+        <option value="off">Off</option>
+        <option value="on">On</option>
+      </select>
+
+
+      <a href="#profile" data-role="button" data-mini="true">Edit profile</a>
+
+      </br>
+      <a href="home.html" data-role="button" data-mini="true">Back to Home</a>
+    </div>
+    </br>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#post" data-icon="gear">Settings</a>
+              <li> <a href="#search" data-icon="star">Logout</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings 2 -->
+
+
+  <div data-role="page" id="profile" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a href="#settings" data-role="button" data-mini="true">Back</a>
+      <h1>SHRIDE</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+
+      <!-- Forms -->
+
+
+      <form method="get" action="Submitted.html" id="register" onsubmit="return validateForm();">
+
+        <!-- FORM FIELDS GO HERE -->
+        <label for="name">First Name:</label>
+        <!-- form errors <div class="error" id="name-error">First name is a required field.</div>  -->
+        <input type="text" name="name" id="name" value="Alison">
+
+        <label for="email">Last Name:</label>
+        <!-- form errors <div class="error" id="name-error">First name is a required field.</div>  -->
+        <input type="text" name="lastname" id="lastname" value="Savage">
+
+        <label for="dob">Wellesley Username:</label>
+        <!-- form errors <div class="error" id="name-error">First name is a required field.</div>  -->
+        <input type="email" name="email" id="email" value="asavage2">
+
+        <label for="pwd">Phone number:</label>
+        <!-- form errors <div class="error" id="name-error">First name is a required field.</div>  -->
+        <input type="tel" name="phone" id="phone">
+
+
+
+
+
+        <br />
+
+      </form>
+      Do you still:
+
+      <!-- this is for the drivers only -->
+      <div class="drive">
+
+        <tr>
+          <td>
+            <label for="flip-1">
+              <strong>Own a car?:</strong>
+            </label>
+            <select name="flip-1" id="carowner" data-role="slider">
+              <option value="off">Off</option>
+              <option value="on">On</option>
+            </select>
+
+            <div class="seats" style="display: none;">
+              <label for="categorySelect">
+                <strong>How many seats?:</strong>
+              </label>
+              <select name="categorySelect" id="categorySelect" name="categorySelect">
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+                <option value="five">5</option>
+                <option value="six">6</option>
+              </select>
+
+            </div>
+
+          </td>
+          <td>
+            <label for="button">
+              <strong>Zipcar:</strong>
+            </label>
+            <select name="flip-1" id="button" class="ui-state-default ui-corner-all" data-role="slider">
+              <option value="off">Off</option>
+              <option value="on">On</option>
+            </select>
+          </td>
+        </tr>
+
+      </div>
+      <!--
+      <label for="flip-1">
+        <strong>rider?</strong>
+      </label>
+      <select name="flip-1" id="flip-1" data-role="slider">
+        <option value="off">Off</option>
+        <option value="on">On</option>
+      </select>
+      </br>
+      <label for="flip-1">
+        <strong>driver?</strong>
+      </label>
+      <select name="flip-1" id="drivebutton" data-role="slider">
+        <option value="off">Off</option>
+        <option value="on">On</option>
+      </select>
+      </br>
+      <div class="drive" style="display:none;">
+        <form id="contact" action="/contact" method="post">
+          <script language="JavaScript" type="text/javascript">
+          </script>
+          <div class="two-thirds column" id="main">
+            <fieldset>
+              <label for="categorySelect">
+                <strong>Seats</strong>
+                </br>
+              </label>
+              <select id="categorySelect" name="categorySelect">
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+                <option value="five">5</option>
+                <option value="six">6</option>
+              </select>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+-->
+      </br>
+      <a href="#create" data-role="button" data-mini="true">Next</a>
+    </div>
+    </br>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#settings" data-icon="gear">Settings</a>
+              <li> <a href="" data-icon="star">Logout</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Create profile -->
+
+
+  <body>
+    <!-- home page for the app -->
+    <div data-role="page" id="create" data-theme="d">
+      <div data-role="header" data-position="inline">
+
+        <a href="#profile" data-role="button" data-mini="true">Back</a>
+
+
+        <h1>SHRIDE</h1>
+      </div>
+      <!-- /header -->
+      <div data-role="content">
+
+        Edit your Shride Profile!
+
+        <P>
+          <img src="Savage_photo.png" width="200" alt="profile picture" />
+
+
+          <a href="#" data-role="button" data-mini="true" onClick="alert('Uploaded!');">Upload Profile Picture</a>
+          </br>
+
+          <form id="contact" action="/contact" method="post">
+            <script language="JavaScript" type="text/javascript">
+            </script>
+            <div class="two-thirds column" id="main">
+              <fieldset>
+                <label for="categorySelect">
+                  <strong>Preferred Pronouns:</strong>
+                  </br>
+                </label>
+                <select id="categorySelect" name="categorySelect">
+                  <option value="they/them/theirs">they/them/theirs</option>
+                  <option value="she/her/hers">she/her/hers</option>
+                  <option value="he/him/his">he/him/his</option>
+                </select>
+              </fieldset>
+            </div>
+          </form>
+
+          </br>
+          <a href="home.html" data-role="button" data-mini="true" onClick="alert('Changes saved!');">Save changes</a>
+
+
+      </div>
+      </br>
+      <div data-role="footer">
+        <div data-role="navbar">
+          <ul>
+            <li> <a href="#home" data-icon="home">Home</a>
+              <li> <a href="#settings" data-icon="gear">Settings</a>
+                <li> <a href="" data-icon="star">driver</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- this is for new users -->
+    <div data-role="page" id="newuser" data-theme="d">
+      <div data-role="header" data-position="inline">
+        <a href="#login" data-role="button" data-mini="true">Back</a>
+        <h1>SHRIDE</h1>
+      </div>
+      <!-- /header -->
+      <div data-role="content">
+        <form id="new" action="/post" method="post">
+          <script language="JavaScript" type="text/javascript">
+          </script>
+          <div class="two-thirds column" id="main">
+            <fieldset>
+              <br>
+              <label for="flip-1">
+                <strong>Select what applies to you:</strong>
+              </label>
+              <br>
+              <div class="flipbuttons">
+                <table>
+                  <tr>
+                    <td>
+                      <label for="flip-1">
+                        <strong>Rider:</strong>
+                      </label>
+                      <select name="flip-1" id="flip-1" data-role="slider">
+                        <option value="off">Off</option>
+                        <option value="on">On</option>
+                      </select>
+                    </td>
+                    <td>
+                      <label for="drivebutton">
+                        <strong>Driver:</strong>
+                      </label>
+                      <select name="flip-1" id="drivebutton" class="ui-state-default ui-corner-all" data-role="slider">
+                        <option value="off">Off</option>
+                        <option value="on">On</option>
+                      </select>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <!-- this is for the drivers only -->
+              <div class="drive" style="display: none;">
+
+                <tr>
+                  <td>
+                    <label for="flip-1">
+                      <strong>Own a car?:</strong>
+                    </label>
+                    <select name="flip-1" id="carowner" data-role="slider">
+                      <option value="off">Off</option>
+                      <option value="on">On</option>
+                    </select>
+
+                    <div class="seats" style="display: none;">
+                      <label for="categorySelect">
+                        <strong>How many seats?:</strong>
+                      </label>
+                      <select name="categorySelect" id="categorySelect" name="categorySelect">
+                        <option value="one">1</option>
+                        <option value="two">2</option>
+                        <option value="three">3</option>
+                        <option value="four">4</option>
+                        <option value="five">5</option>
+                        <option value="six">6</option>
+                      </select>
+
+                    </div>
+
+                  </td>
+                  <td>
+                    <label for="button">
+                      <strong>Zipcar:</strong>
+                    </label>
+                    <select name="flip-1" id="button" class="ui-state-default ui-corner-all" data-role="slider">
+                      <option value="off">Off</option>
+                      <option value="on">On</option>
+                    </select>
+                  </td>
+                </tr>
+
+              </div>
+
+
+              <br>
+              <div class="flipbuttons">
+                <label for="flip-1">
+                  <strong>Money matters:</strong>
+                </label>
+                <br>
+                <table>
+                  <tr>
+                    <td>
+                      <label for="flip-1">
+                        <strong>Venmo:</strong>
+                      </label>
+                      <select name="flip-1" id="flip-1" data-role="slider">
+                        <option value="off">Off</option>
+                        <option value="on">On</option>
+                      </select>
+                    </td>
+                    <td>
+                      <label for="button">
+                        <strong>Cash/Alternatives:</strong>
+                      </label>
+                      <select name="flip-1" id="button" class="ui-state-default ui-corner-all" data-role="slider">
+                        <option value="off">Off</option>
+                        <option value="on">On</option>
+                      </select>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </fieldset>
+          </div>
+        </form> <a href="#humandetails" data-role="button" data-mini="true">Next</a> </div>
+      </br>
+    </div>
+
+
+    <!-- human details -->
+    <div data-role="page" id="humandetails" data-theme="d">
+      <div data-role="header" data-position="inline">
+        <a href="#newuser" data-role="button" data-mini="true">Back</a>
+        <h1>SHRIDE</h1>
+      </div>
+      <!-- /header -->
+      <div data-role="content">
+        <form id="human" action="/post" method="post">
+          <div class="two-thirds column" id="main">
+            <fieldset>
+              </br>
+              <label for="object">
+                <strong>Your name:</strong>
+              </label>
+              <input type="text" id="object" name="object" />
+
+              <div class="ui-widget">
+                <label for="combobox">
+                  <strong>Your preferred pronouns:</strong>
+                </label>
+                <select id="combobox">
+                  <option value="">Select one...</option>
+                  <option value="female">She, hers, hers</option>
+                  <option value="male">He, him, his</option>
+                  <option value="genderneutral">They, them, theirs</option>
+
+                </select>
+              </div>
+          </div>
+        </form>
+        </br>
+        </br> <a href="#done" data-role="button" data-mini="true">Next </a>
+      </div>
+    </div>
+
+    <!-- this is complete screen -->
+    <div data-role="page" id="done" data-theme="d">
+
+      <div data-role="header" data-position="inline">
+        <a href="home.html" data-role="button" data-mini="true">Back</a>
+        <h1>SHRIDE</h1>
+      </div>
+      <!-- /header -->
+      <div data-role="content">
+        <fieldset>
+          Congratulations for completing your profile. Remember, you can always change your settings:
+          <br>
+          <img src="https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/s720x720/11081148_466612320156313_3235354230354227503_n.jpg?oh=72ecbc8b0e1fd059e3ef7f3b1f7c1ac0&oe=55E5BA31&__gda__=1439905239_fe6ff11da6b1409fdb5201c213d0bbb2" width="200px">
+          <br> Name: Alison Savage
+          <br> Role: Rider
+          <br> Money: Venmo
+          <br>
+
+          <a href="home.html" data-role="button" data-mini="true">Next</a>
+        </fieldset>
+      </div>
+    </div>
+    <script>
+      $(function() {
+        $('#drivebutton').change(function() {
+          if ($('.drive').is(':visible')) {
+            $('.drive').hide();
+          } else {
+            $('.drive').show();
+          }
+        });
+      });
+      $(function() {
+        $('#carowner').change(function() {
+          if ($('.seats').is(':visible')) {
+            $('.seats').hide();
+          } else {
+            $('.seats').show();
+          }
+        });
+      }); //this is javascript anyway, we'll just leave this here since there is nothing else we can really do to secure it (without using server side)
+
+      Parse.initialize("JwqmCZVQV0EHyLNKbOE7eklPE0f7ji7LhH8f2UyQ", "KUqYU0RP5KRhjHY32fwbXSGm9zUAFDO1kSo6hh4y");
+      // var TestObject = Parse.Object.extend("TestObject");
+      // var testObject = new TestObject();
+      // testObject.save({
+      // foo: "bar"
+      // }, {
+      // success: function(object) {
+      // $(".success").show();
+      // },
+      // error: function(model, error) {
+      // $(".error").show();
+      // }
+      // });
+
+      //this is for getting the username out, purely for signing up. need another way to check if person is in the database already or not, and then to do this otherwise.
+      $(window).load(function() {
+        queryString();
+      });
+
+      function queryString() {
+        var queryString = window.location.search.substring(1);
+        var varArray = queryString.split("="); //eg. index.html?msg=1
+
+        var param1 = varArray[0];
+        var param2 = varArray[1]; //the thing
+        handleUsers(param2);
+      };
+
+      function handleUsers(param2) {
+        Parse.User.logIn(param2, "my pass", {
+          success: function(user) {
+            // Do stuff after successful login.
+            alert("login successful");
+          },
+          error: function(user, error) {
+            // The login failed. Check error to see why.
+            alert("Error: " + error.code + " " + error.message);
+            alert("not login, new user?");
+            var user = new Parse.User();
+            user.set("username", param2);
+            user.set("password", "my pass"); //we don't need this though
+            user.set("email ", " <? php echo $user ?> @wellesley.edu ");
+            // other fields can be set just like with Parse.Object
+            user.set("phone ", "650 - 555 - 0000 ");
+            user.signUp(null, {
+              success: function(user) {
+                // Hooray! Let them use the app now.
+                alert("yay, new user added");
+              },
+              error: function(user, error) {
+                // Show the error message somewhere and let the user try again.
+
+                alert("Error: " + error.code + " " + error.message);
+              }
+            })
+          }
+        })
+      };
+    </script>
+
+  </body>
+
+</html>

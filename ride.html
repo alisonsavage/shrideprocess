@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>SHRIDE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/Shride.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="src/DateTimePicker.css" />
+
+  <script type="text/javascript" src="demo/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="src/DateTimePicker.js"></script>
+
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery-gmaps-latlon-picker.css" />
+  <script src="js/jquery-gmaps-latlon-picker.js"></script>
+
+  <style type="text/css">
+    p {
+      margin-left: 20px;
+    }
+    
+    input {
+      width: 200px;
+      padding: 10px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- RIDER NEWSFEED -->
+
+  <div data-role="page" id="ridenewsfeed" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a href="" data-rel="back" back-btn="true">Back</a>
+
+      <h1>SHRIDE</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content" class="ui-content">
+      <a href=#createnewride data-role="button" data-mini="true">Create New Ride</a>
+      </br>
+      <ul data-role="listview">
+        <li>
+          <a href="#ride1" class="ui-link-inherit">
+            <img src="car.png">
+            <h3 class="ui-li-heading">5/18/15, 3:00pm</h3>
+            <p class="ui-li-desc">Wellesley to Logan Airport</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="#ride1" class="ui-link-inherit">
+            <img src="car.png">
+            <h3 class="ui-li-heading">5/18/15, 7:00pm</h3>
+            <p class="ui-li-desc">Wellesley to South Station</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="#ride1" class="ui-link-inherit">
+            <img src="car.png">
+            <h3 class="ui-li-heading">5/19/15, 10:00am</h3>
+            <p class="ui-li-desc">Davis Square to South Station</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="#ride1" class="ui-link-inherit">
+            <img src="car.png">
+            <h3 class="ui-li-heading">5/19/15, 8:00pm</h3>
+            <p class="ui-li-desc">Harvard Square to Wellesley</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="#ride1" class="ui-link-inherit">
+            <img src="car.png">
+            <h3 class="ui-li-heading">5/20/15, 1:00pm</h3>
+            <p class="ui-li-desc">Logan Airport to Wellesley</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="#ride1" class="ui-link-inherit">
+            <img src="car.png">
+            <h3 class="ui-li-heading">5/21/15, 12:00am</h3>
+            <p class="ui-li-desc">Government Center to Wellesley</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="#ride1" class="ui-link-inherit">
+            <img src="car.png">
+            <h3 class="ui-li-heading">5/21/15, 11:00am</h3>
+            <p class="ui-li-desc">Wellesley to Logan Airport</p>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+    </br>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#gear" data-icon="gear">Settings</a>
+              <li> <a href="#star" data-icon="star">Logout</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- END RIDER NEWSFEED-->
+
+  <!-- SINGLE RIDE IN NEWSFEED-->
+
+  <div data-role="page" id="ride1" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a href="dp" data-rel="back" back-btn="true">Back</a>
+      <h1>SHRIDE</h1>
+    </div>
+    <div data-role="content" class="ui-content">
+      <ul data-role="listview">
+        <li>
+          <a href="#ride1" class="ui-link-inherit">
+            <img src="car.png">
+            <h3 class="ui-li-heading">5/18/15, 3:00pm</h3>
+            <p class="ui-li-desc">To: Logan Airport</br>
+              </br>From: Wellesley</br>
+              </br>How many seats open: 4</br>
+              </br>Cost per person: $20</br>
+            </p>
+          </a>
+        </li>
+      </ul>
+
+      </br>
+      <a href=#contact data-role="button" data-mini="true">Contact</a>
+      <a href="#join" data-role="button" data-mini="true">Join</a>
+      </br>
+
+      <ul data-role="listview">
+
+        <li>
+          <a href="" class="ui-link-inherit">
+            <p class="ui-li-desc">5/18/15, Wellesley to South Station</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="" class="ui-link-inherit">
+            <p class="ui-li-desc">5/19/15, Davis Square to South Station</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="" class="ui-link-inherit">
+            <p class="ui-li-desc">5/19/15, Harvard Square to Wellesley</p>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+    </br>
+    </br>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#gear" data-icon="gear">Settings</a>
+              <li> <a href="#star" data-icon="star">Logout</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MESSAGING CONTACT-->
+
+  <div data-role="page" id="contact" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a href="dp" data-rel="back" back-btn="true">Back</a>
+      <h1>SHRIDE</h1>
+    </div>
+    <div data-role="content" class="ui-content">
+      <p>
+        <strong>You are chatting with: Dana W.</strong>
+        </br>
+        </br>
+        <strong>Me: </strong>Hi! Thanks for the ride :)
+        </br>
+        <strong>Dana W.: </strong>No problem!</p>
+    </div>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#gear" data-icon="gear">Settings</a>
+              <li> <a href="#star" data-icon="star">Logout</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- JOIN RIDE CONFIRMATION -->
+
+  <div data-role="page" id="join" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a href="dp" data-rel="back" back-btn="true">Back</a>
+      <h1>SHRIDE</h1>
+    </div>
+    <div data-role="content" class="ui-content">
+      <p>Your ride has been added to your profile. You will be notified of your ride via text 30 minutes prior to departure.</br>
+        -----------------------
+        </br>To: Logan Airport
+        </br>From: Wellesley
+        </br>3 more seats are open in this ride.</p>
+    </div>
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li> <a href="#home" data-icon="home">Home</a>
+            <li> <a href="#gear" data-icon="gear">Settings</a>
+              <li> <a href="#star" data-icon="star">Logout</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREATE NEW RIDE -->
+
+  <div data-role="page" id="createnewride" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a href="#ridenewsfeed" data-role="button" data-mini="true">Cancel</a>
+      <h1>SHRIDE</h1>
+    </div>
+    <div data-role="content">
+      <strong>When do you need the ride?</strong>
+      <!--CALENDAR HERE -->
+      </br>
+      </br>
+      <!--DATE/TIME PICKER -->
+      <p>Enter Date and Time : </p>
+      <input type="text" data-field="datetime" readonly>
+
+      <div id="dtBox"></div>
+
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $("#dtBox").DateTimePicker();
+        });
+      </script>
+      </br>
+      </br>
+    </div>
+    <div data-role="footer">
+      <a data-icon="carat-l" data-rel="back" back-btn="true">Back</a>
+      <a href="#rpnew2" data-role="button" data-icon="carat-r" data-mini="true">Next</a>
+    </div>
+    </br>
+  </div>
+
+  <div data-role="page" id="rpnew2" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a href="#ridenewsfeed" data-role="button" data-mini="true">Cancel</a>
+      <h1>SHRIDE</h1>
+    </div>
+    <div data-role="content">
+      <strong>Where will you be coming from?</strong>
+      <!--GOOGLE MAP HERE -->
+      <fieldset class="gllpLatlonPicker">
+        <input type="text" class="gllpSearchField">
+        <input type="button" class="gllpSearchButton" value="search">
+        <div class="gllpMap">Google Maps</div>
+        <input type="hidden" class="gllpLatitude" value="20" />
+        <input type="hidden" class="gllpLongitude" value="20" />
+        <input type="hidden" class="gllpZoom" value="3" />
+      </fieldset>
+    </div>
+    <div data-role="footer">
+      <a data-icon="carat-l" data-rel="back" back-btn="true">Back</a>
+      <a href="#rpnew3" data-icon="carat-r" data-role="button" data-rel="next" class="next" data-mini="true">Next</a>
+    </div>
+    </br>
+  </div>
+
+  <div data-role="page" id="rpnew3" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a href="#ridenewsfeed" data-role="button" data-mini="true">Cancel</a>
+      <h1>SHRIDE</h1>
+    </div>
+    <div data-role="content">
+      <strong>Where will you be going?</strong>
+      <!--GOOGLE MAP HERE -->
+      <fieldset class="gllpLatlonPicker">
+        <input type="text" class="gllpSearchField">
+        <input type="button" class="gllpSearchButton" value="search">
+        <div class="gllpMap">Google Maps</div>
+        <input type="hidden" class="gllpLatitude" value="20" />
+        <input type="hidden" class="gllpLongitude" value="20" />
+        <input type="hidden" class="gllpZoom" value="3" />
+      </fieldset>
+    </div>
+    <div data-role="footer">
+      <a data-icon="carat-l" data-rel="back" back-btn="true">Back</a>
+      <a href="#rpnew4" data-icon="carat-r" data-role="button" data-rel="next" class="next" data-mini="true">Next</a>
+    </div>
+    </br>
+  </div>
+
+  <div data-role="page" id="rpnew4" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a href="#ridenewsfeed" data-role="button" data-mini="true">Cancel</a>
+      <h1>SHRIDE</h1>
+    </div>
+    <div data-role="content">
+      <strong>Just a couple more details...</strong>
+      </br>
+      </br>
+      <form id="contact" action="/contact" method="post">
+        <script language="JavaScript" type="text/javascript">
+        </script>
+        <div class="two-thirds column" id="main">
+          <fieldset>
+            <label for="categorySelect">
+              <strong>How many passengers?</strong>
+              </br>
+            </label>
+            <select id="categorySelect" name="categorySelect">
+              <option value="one">1</option>
+              <option value="two">2</option>
+              <option value="three">3</option>
+              <option value="four">4</option>
+              <option value="five">5</option>
+              <option value="six">6</option>
+            </select>
+            <label for="categorySelect2">
+              </br>
+              <strong>Preferred Cost</strong>
+              </br>
+              Between
+            </label>
+            <select id="categorySelect2" name="categorySelect">
+              <option value="zero">$0</option>
+              <option value="fivedollars">$5</option>
+              <option value="ten">$10</option>
+              <option value="fifteen">$15</option>
+              <option value="twenty">$20</option>
+              <option value="twentyfive">$25</option>
+              <option value="thirty">$30</option>
+              <option value="thirtyfive">$35</option>
+              <option value="forty">$40</option>
+              <option value="fortyfive">$45</option>
+              <option value="fifty">$50</option>
+            </select>
+
+            <label for="categorySelect3">
+              and
+              </br>
+            </label>
+            <select id="categorySelect3" name="categorySelect">
+              <option value="zero">$0</option>
+              <option value="fivedollars">$5</option>
+              <option value="ten">$10</option>
+              <option value="fifteen">$15</option>
+              <option value="twenty">$20</option>
+              <option value="twentyfive">$25</option>
+              <option value="thirty">$30</option>
+              <option value="thirtyfive">$35</option>
+              <option value="forty">$40</option>
+              <option value="fortyfive">$45</option>
+              <option value="fifty">$50</option>
+            </select>
+          </fieldset>
+        </div>
+        </br>
+      </form>
+    </div>
+    <div data-role="footer">
+      <a data-icon="carat-l" data-rel="back" back-btn="true">Back</a>
+      <a href="#rpnew5" data-icon="carat-r" data-role="button" data-rel="next" class="next" data-mini="true">Next</a>
+    </div>
+    </br>
+  </div>
+
+  <div data-role="page" id="rpnew5" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <h1>SHRIDE</h1>
+    </div>
+    <div data-role="content">
+      <strong>Your Ride is Complete!</strong>
+
+      <div id="accordion">
+        <h1>Your Listing</h1>
+        <div>
+          <p>
+            Date:
+            </br>
+            </br>
+            From:
+            </br>
+            </br>
+            To:
+            </br>
+            </br>
+            Passengers:
+            </br>
+            </br>
+            Price Range:
+            </br>
+            </br>
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <div data-role="footer">
+      <a href="#ridenewsfeed" data-role="button" data-mini="true">Return to Ride Newsfeed</a>
+    </div>
+    </br>
+  </div>
+
+</body>
+
+</html>

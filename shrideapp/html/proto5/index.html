@@ -1,0 +1,277 @@
+<!-- index.html has the create profile and login page -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>SHRIDE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/Shride.css" />
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <link href="glDatePicker.default.css" rel="stylesheet" type="text/css">
+
+  <script src="utilities.js"></script>
+  <script src="submit-event.js"></script>
+  <style>
+    .flipbuttons {
+      width: 90%;
+      margin: 0 auto;
+    }
+    
+    td {
+      padding-right: 30px;
+      text-align: left;
+    }
+    
+    .custom-combobox {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .custom-combobox-toggle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin-left: -1px;
+      padding: 0;
+    }
+    
+    .custom-combobox-input {
+      margin: 0;
+      padding: 5px 10px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <!-- for all users: seeing the create profile and new user page -->
+  <div data-role="page" id="login" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <h1>SHRIDE</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+      <a href="index.php" data-role="button" data-mini="true">Log in</a>
+    </div>
+    </br>
+  </div>
+  <!-- this is for new users -->
+  <div data-role="page" id="newuser" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a href="#login" data-role="button" data-mini="true">Back</a>
+      <h1>SHRIDE</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+      <form id="new" action="/post" method="post">
+        <script language="JavaScript" type="text/javascript">
+        </script>
+        <div class="two-thirds column" id="main">
+          <fieldset>
+            <br>
+            <label for="flip-1">
+              <strong>Select what applies to you:</strong>
+            </label>
+            <br>
+            <div class="flipbuttons">
+              <table>
+                <tr>
+                  <td>
+                    <label for="flip-1">
+                      <strong>Rider:</strong>
+                    </label>
+                    <select name="flip-1" id="flip-1" data-role="slider">
+                      <option value="off">Off</option>
+                      <option value="on">On</option>
+                    </select>
+                  </td>
+                  <td>
+                    <label for="drivebutton">
+                      <strong>Driver:</strong>
+                    </label>
+                    <select name="flip-1" id="drivebutton" class="ui-state-default ui-corner-all" data-role="slider">
+                      <option value="off">Off</option>
+                      <option value="on">On</option>
+                    </select>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- this is for the drivers only -->
+            <div class="drive" style="display: none;">
+
+              <tr>
+                <td>
+                  <label for="flip-1">
+                    <strong>Own a car?:</strong>
+                  </label>
+                  <select name="flip-1" id="carowner" data-role="slider">
+                    <option value="off">Off</option>
+                    <option value="on">On</option>
+                  </select>
+
+                  <div class="seats" style="display: none;">
+                    <label for="categorySelect">
+                      <strong>How many seats?:</strong>
+                    </label>
+                    <select name="categorySelect" id="categorySelect" name="categorySelect">
+                      <option value="one">1</option>
+                      <option value="two">2</option>
+                      <option value="three">3</option>
+                      <option value="four">4</option>
+                      <option value="five">5</option>
+                      <option value="six">6</option>
+                    </select>
+
+                  </div>
+
+                </td>
+                <td>
+                  <label for="button">
+                    <strong>Zipcar:</strong>
+                  </label>
+                  <select name="flip-1" id="button" class="ui-state-default ui-corner-all" data-role="slider">
+                    <option value="off">Off</option>
+                    <option value="on">On</option>
+                  </select>
+                </td>
+              </tr>
+
+            </div>
+
+
+            <br>
+            <div class="flipbuttons">
+              <label for="flip-1">
+                <strong>Money matters:</strong>
+              </label>
+              <br>
+              <table>
+                <tr>
+                  <td>
+                    <label for="flip-1">
+                      <strong>Venmo:</strong>
+                    </label>
+                    <select name="flip-1" id="flip-1" data-role="slider">
+                      <option value="off">Off</option>
+                      <option value="on">On</option>
+                    </select>
+                  </td>
+                  <td>
+                    <label for="button">
+                      <strong>Cash/Alternatives:</strong>
+                    </label>
+                    <select name="flip-1" id="button" class="ui-state-default ui-corner-all" data-role="slider">
+                      <option value="off">Off</option>
+                      <option value="on">On</option>
+                    </select>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </fieldset>
+        </div>
+      </form> <a href="#humandetails" data-role="button" data-mini="true">Next</a> </div>
+    </br>
+  </div>
+
+
+  <!-- human details -->
+  <div data-role="page" id="humandetails" data-theme="d">
+    <div data-role="header" data-position="inline">
+      <a href="#newuser" data-role="button" data-mini="true">Back</a>
+      <h1>SHRIDE</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+      <form id="human" action="/post" method="post">
+        <div class="two-thirds column" id="main">
+          <fieldset>
+            </br>
+            <label for="object">
+              <strong>Your name:</strong>
+            </label>
+            <input type="text" id="object" name="object" />
+
+            <div class="ui-widget">
+              <label for="combobox">
+                <strong>Your preferred pronouns:</strong>
+              </label>
+              <select id="combobox">
+                <option value="">Select one...</option>
+                <option value="female">She, hers, hers</option>
+                <option value="male">He, him, his</option>
+                <option value="genderneutral">They, them, theirs</option>
+
+              </select>
+            </div>
+        </div>
+      </form>
+      </br>
+      </br> <a href="#done" data-role="button" data-mini="true">Next </a>
+    </div>
+  </div>
+
+  <!-- this is complete screen -->
+  <div data-role="page" id="done" data-theme="d">
+
+    <div data-role="header" data-position="inline">
+      <a href="home.html" data-role="button" data-mini="true">Back</a>
+      <h1>SHRIDE</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+      <fieldset>
+        Congratulations for completing your profile. Remember, you can always change your settings:
+        <br>
+        <img src="https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/s720x720/11081148_466612320156313_3235354230354227503_n.jpg?oh=72ecbc8b0e1fd059e3ef7f3b1f7c1ac0&oe=55E5BA31&__gda__=1439905239_fe6ff11da6b1409fdb5201c213d0bbb2" width="200px">
+        <br> Name: Alison Savage
+        <br> Role: Rider
+        <br> Money: Venmo
+        <br>
+
+        <a href="home.html" data-role="button" data-mini="true">Next</a>
+      </fieldset>
+    </div>
+  </div>
+  <script>
+    $(function() {
+      $('#drivebutton').change(function() {
+        if ($('.drive').is(':visible')) {
+          $('.drive').hide();
+        } else {
+          $('.drive').show();
+        }
+
+
+      });
+    });
+
+    $(function() {
+      $('#carowner').change(function() {
+        if ($('.seats').is(':visible')) {
+          $('.seats').hide();
+        } else {
+          $('.seats').show();
+        }
+
+
+      });
+    });
+
+    //db.users.insert({"name":"kchan4", "roles":["rider","driver"], "payment":["venmo","cash"]})
+  </script>
+</body>
+
+</html>
